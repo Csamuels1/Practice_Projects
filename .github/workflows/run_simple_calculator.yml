@@ -1,0 +1,14 @@
+name: Run Python Script
+on: [push]
+jobs:
+  run-script:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+         python-version: '3.13.5'
+      - name: Run simple_calculator.py
+        run: python simple_calculator.py
